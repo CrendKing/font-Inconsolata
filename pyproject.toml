@@ -1,0 +1,10 @@
+[project]
+name = 'Inconsolata'
+version = '1'
+requires-python = '>=3.13'
+dependencies = [
+    # the version numbers are the latest that still work
+    'fontmake==3.2.0',
+    'gftools',
+    'glyphsets==0.6.11',
+]
