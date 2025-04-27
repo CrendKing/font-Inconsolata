@@ -115,35 +115,35 @@ name = aalt;
 {
 automatic = 1;
 code = "lookup ccmp_Other_1 {
-	@CombiningTopAccents = [acutecomb brevecomb breveinvertedcomb caroncomb circumflexcomb commaturnedabovecomb dblgravecomb dieresiscomb dotaccentcomb gravecomb hookabovecomb hungarumlautcomb macroncomb ringcomb tildecomb];
-	@CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb strokelongcomb strokeshortcomb];
-	sub [i j]' @CombiningTopAccents by [idotless jdotless];
-	sub [i j]' @CombiningNonTopAccents @CombiningTopAccents by [idotless jdotless];
-	@Markscomb = [dieresiscomb dotaccentcomb gravecomb acutecomb hungarumlautcomb circumflexcomb caroncomb brevecomb ringcomb tildecomb horncomb acute breve caron dieresis dotaccent grave hungarumlaut ring tilde circumflexcomb_acutecomb circumflexcomb_gravecomb circumflexcomb_hookabovecomb circumflexcomb_tildecomb];
-	@MarkscombCase = [dieresiscomb.case dotaccentcomb.case gravecomb.case acutecomb.case hungarumlautcomb.case circumflexcomb.case caroncomb.case brevecomb.case ringcomb.case tildecomb.case horncomb.case acute.case breve.case caron.case dieresis.case dotaccent.case grave.case hungarumlaut.case ring.case tilde.case circumflexcomb_acutecomb.case circumflexcomb_gravecomb.case circumflexcomb_hookabovecomb.case circumflexcomb_tildecomb.case];
-	sub @Markscomb @Markscomb' by @MarkscombCase;
-	sub @Uppercase @Markscomb' by @MarkscombCase;
+    @CombiningTopAccents = [acutecomb brevecomb breveinvertedcomb caroncomb circumflexcomb commaturnedabovecomb dblgravecomb dieresiscomb dotaccentcomb gravecomb hookabovecomb hungarumlautcomb macroncomb ringcomb tildecomb];
+    @CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb strokelongcomb strokeshortcomb];
+    sub [i j]' @CombiningTopAccents by [idotless jdotless];
+    sub [i j]' @CombiningNonTopAccents @CombiningTopAccents by [idotless jdotless];
+    @Markscomb = [dieresiscomb dotaccentcomb gravecomb acutecomb hungarumlautcomb circumflexcomb caroncomb brevecomb ringcomb tildecomb horncomb acute breve caron dieresis dotaccent grave hungarumlaut ring tilde circumflexcomb_acutecomb circumflexcomb_gravecomb circumflexcomb_hookabovecomb circumflexcomb_tildecomb];
+    @MarkscombCase = [dieresiscomb.case dotaccentcomb.case gravecomb.case acutecomb.case hungarumlautcomb.case circumflexcomb.case caroncomb.case brevecomb.case ringcomb.case tildecomb.case horncomb.case acute.case breve.case caron.case dieresis.case dotaccent.case grave.case hungarumlaut.case ring.case tilde.case circumflexcomb_acutecomb.case circumflexcomb_gravecomb.case circumflexcomb_hookabovecomb.case circumflexcomb_tildecomb.case];
+    sub @Markscomb @Markscomb' by @MarkscombCase;
+    sub @Uppercase @Markscomb' by @MarkscombCase;
 } ccmp_Other_1;
 
 lookup ccmp_Other_2 {
-	sub @Markscomb' @MarkscombCase by @MarkscombCase;
-	sub @MarkscombCase @Markscomb' by @MarkscombCase;
+    sub @Markscomb' @MarkscombCase by @MarkscombCase;
+    sub @MarkscombCase @Markscomb' by @MarkscombCase;
 } ccmp_Other_2;
 
 lookup ccmp_latn_1 {
-	script latn;
-	lookupflag 0;
-	sub brevecomb acutecomb by brevecomb_acutecomb;
-	sub brevecomb gravecomb by brevecomb_gravecomb;
-	sub brevecomb hookabovecomb by brevecomb_hookabovecomb;
-	sub brevecomb tildecomb by brevecomb_tildecomb;
-	sub circumflexcomb acutecomb by circumflexcomb_acutecomb;
-	sub circumflexcomb gravecomb by circumflexcomb_gravecomb;
-	sub circumflexcomb hookabovecomb by circumflexcomb_hookabovecomb;
-	sub circumflexcomb tildecomb by circumflexcomb_tildecomb;
-	sub circumflexcomb.case acutecomb.case by circumflexcomb_acutecomb.case;
-	sub circumflexcomb.case gravecomb.case by circumflexcomb_gravecomb.case;
-	sub circumflexcomb.case tildecomb.case by circumflexcomb_tildecomb.case;
+    script latn;
+    lookupflag 0;
+    sub brevecomb acutecomb by brevecomb_acutecomb;
+    sub brevecomb gravecomb by brevecomb_gravecomb;
+    sub brevecomb hookabovecomb by brevecomb_hookabovecomb;
+    sub brevecomb tildecomb by brevecomb_tildecomb;
+    sub circumflexcomb acutecomb by circumflexcomb_acutecomb;
+    sub circumflexcomb gravecomb by circumflexcomb_gravecomb;
+    sub circumflexcomb hookabovecomb by circumflexcomb_hookabovecomb;
+    sub circumflexcomb tildecomb by circumflexcomb_tildecomb;
+    sub circumflexcomb.case acutecomb.case by circumflexcomb_acutecomb.case;
+    sub circumflexcomb.case gravecomb.case by circumflexcomb_gravecomb.case;
+    sub circumflexcomb.case tildecomb.case by circumflexcomb_tildecomb.case;
 } ccmp_latn_1;
 ";
 name = ccmp;
@@ -241,14 +241,14 @@ name = dnom;
 {
 automatic = 1;
 code = "lookup FRAC {
-	sub slash by fraction;
+    sub slash by fraction;
 } FRAC;
 lookup UP {
-	sub [zero one two three four five six seven eight nine] by [zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr];
+    sub [zero one two three four five six seven eight nine] by [zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr];
 } UP;
 lookup DOWN {
-	sub fraction [zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr]' by [zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom];
-	sub [zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom] [zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr]' by [zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom];
+    sub fraction [zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr]' by [zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom];
+    sub [zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom] [zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr]' by [zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom];
 } DOWN;
 ";
 name = frac;
@@ -373,11 +373,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1004;
+value = 859;
 },
 {
 name = winDescent;
-value = 454;
+value = 309;
 },
 {
 name = hheaAscender;
@@ -449,11 +449,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1004;
+value = 859;
 },
 {
 name = winDescent;
-value = 454;
+value = 309;
 },
 {
 name = hheaAscender;
@@ -524,11 +524,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1004;
+value = 859;
 },
 {
 name = winDescent;
-value = 454;
+value = 309;
 },
 {
 name = hheaAscender;
@@ -599,11 +599,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1004;
+value = 859;
 },
 {
 name = winDescent;
-value = 454;
+value = 309;
 },
 {
 name = hheaAscender;
@@ -672,11 +672,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1004;
+value = 859;
 },
 {
 name = winDescent;
-value = 454;
+value = 309;
 },
 {
 name = hheaAscender;
@@ -764,11 +764,11 @@ value = 0;
 },
 {
 name = winDescent;
-value = 454;
+value = 309;
 },
 {
 name = winAscent;
-value = 1004;
+value = 859;
 },
 {
 name = "Master Icon Glyph Name";
@@ -823,11 +823,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1004;
+value = 859;
 },
 {
 name = winDescent;
-value = 454;
+value = 309;
 },
 {
 name = hheaAscender;
@@ -898,11 +898,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1004;
+value = 859;
 },
 {
 name = winDescent;
-value = 454;
+value = 309;
 },
 {
 name = hheaAscender;
@@ -971,11 +971,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1004;
+value = 859;
 },
 {
 name = winDescent;
-value = 454;
+value = 309;
 },
 {
 name = hheaAscender;
@@ -270402,7 +270402,7 @@ widthClass = "Ultra Expanded";
 );
 manufacturer = "Raph Levien, Cyreal, Google";
 manufacturerURL = "http://www.levien.com | http://www.cyreal.org | http://fonts.google.com";
-unitsPerEm = 1000;
+unitsPerEm = 880;
 userData = {
 GSDimensionPlugin.Dimensions = {
 "051EFAE4-8BBE-4FBB-A016-4335C3E52F59" = {
@@ -270501,5 +270501,5 @@ tH = 91;
 };
 };
 versionMajor = 3;
-versionMinor = 100;
+versionMinor = 101;
 }
