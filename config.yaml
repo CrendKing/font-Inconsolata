@@ -1,0 +1,6 @@
+sources:
+  - Inconsolata My.glyphs
+buildStatic: false
+outputDir: fonts
+flattenComponents: false
+decomposeTransformedComponents: true
