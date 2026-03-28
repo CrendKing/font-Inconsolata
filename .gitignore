@@ -1,2 +1,5 @@
 *(Autosaved)*
 .DS_Store
+*.lock
+
+fonts/
