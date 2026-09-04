@@ -2,4 +2,6 @@
 .DS_Store
 *.lock
 
-fonts/
+/fonts/
+/*.glyphs
+/My.json

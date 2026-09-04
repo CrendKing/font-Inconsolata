@@ -1,14 +1,14 @@
+import json
 import os
 import subprocess
 
 from glyphsLib import GSFont
 
 if __name__ == '__main__':
-    TRANSFORMATION = (1.05, 0, 0, 1.15, 0, 0)
-    ADVANCE = 1.1
-    OUTPUT_FILE = 'Inconsolata My.glyphs'
+    with open('My.json') as file:
+        config = json.load(file)
 
-    font = GSFont('sources/Inconsolata.glyphs')
+    font = GSFont(config['source_file'])
 
     font.versionMinor += 1
 
@@ -18,7 +18,7 @@ if __name__ == '__main__':
     new_masters = []
 
     for i, axis in enumerate(font.axes):
-        if axis.name == 'Width':
+        if axis.name.lower() == 'width':
             width_axis_index = i
         else:
             new_axes.append(axis)
@@ -41,12 +41,13 @@ if __name__ == '__main__':
     font.instances = new_instances
     font.masters = new_masters
     remaining_master_ids = {master.id for master in font.masters}
+    TRANSFORMATION = (config['width'], 0, 0, config['height'], 0, 0)
 
     for glyph in font.glyphs:
         glyph.layers = [layer for layer in glyph.layers if (layer.associatedMasterId or layer.layerId) in remaining_master_ids]
 
         for layer in glyph.layers:
-            layer.width *= ADVANCE
+            layer.width *= config['advance']
 
             for path in layer.paths:
                 path.applyTransform(TRANSFORMATION)
@@ -55,12 +56,10 @@ if __name__ == '__main__':
                 component.applyTransformation(TRANSFORMATION[0], TRANSFORMATION[3])
 
             # remove corner component hints, which can't be processed by glyphsLib >= 6.2.0
-            if any(h.type.upper() == 'CORNER' for h in layer.hints):
-                layer.hints = []
+            layer.hints = [h for h in layer.hints if h.type.upper() != 'CORNER']
 
-    font.save(OUTPUT_FILE)
+    font.save(config['output_file'])
 
     subprocess.check_call(['gftools', 'builder', 'config.yaml'])
     os.remove('build.ninja')
     os.remove('.ninja_log')
-    os.remove(OUTPUT_FILE)
